@@ -63,13 +63,13 @@ If using Mac ensure [homebrew](https://brew.sh/) is installed:
 # Install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-
 # Check version to verify installation
 npm --version
 node --version
 which node
 # Install NVM
 brew install nvm
+
 nvm install 16
 nvm use 16
 ```
@@ -78,14 +78,67 @@ nvm use 16
 #### Debian
 kali includes most of the tools, ensure tools are installed if you're not using kali or missing any
 
-
 ```bash
 # Check version to verify installation
 npm --version
 node --version
 which node
+
 # Install NVM
-$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 nvm install 16
+nvm use 16
 ```
 
+# Installation Example
+```bash
+# Install Nerd Font (Download from https://www.nerdfonts.com/font-downloads)
+sudo cp ~/Downloads/HackNerdFont-Bold.ttf /etc/fonts/hackNerd.ttf
+
+# Install and login gh CLI
+sudo apt install gh
+gh auth login
+
+# Install NeoVim IDE
+sudo apt install neovim
+
+# Install AstroNvim configuration
+git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
+rm -rf ~/.config/nvim/.git
+
+# Install additional AstronVim Dependencies
+sudo apt-get install ripgrep
+npm install tree-sitter-cli
+
+# Install LazyGit
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+sudo curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+sudo tar xf lazygit.tar.gz lazygit
+sudo install lazygit /usr/local/bin
+lazygit --version
+
+# Install Visual Studio Code
+# Download: https://code.visualstudio.com/docs/setup/linux
+cd Downloads/
+sudo apt install ./code_1.93.0-1725459079_amd64.deb 
+
+# Optionally install zsh theme
+# https://github.com/romkatv/powerlevel10k
+
+# Install zoxide to replace cd with a smarter option
+sudo apt-install zoxide
+sudo apt install fzf
+echo "source <(fzf --zsh)" >> ~/.zshrc
+echo 'eval "$(zoxide init zsh --cmd cd)"' >> ~/.zshrc
+
+
+# verify javasdk
+java --version
+
+# Install FF extensions
+# https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/
+# https://addons.mozilla.org/en-US/firefox/addon/vimium-ff/
+# https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/
+# https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/
+```
