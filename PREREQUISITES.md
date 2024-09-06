@@ -47,6 +47,8 @@ to start kali Win-Kex:
 ```bash
 # From windows
 wsl -d kali-linux kex --win -s
+# In a new shortcut add this:
+# C:\Windows\System32\cmd.exe /c wsl -d kali-linux kex --win -s
 
 # Inside Kali WSL:
 kex --win -s
