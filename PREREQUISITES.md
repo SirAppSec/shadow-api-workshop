@@ -1,4 +1,4 @@
-# Introductino 
+# Introduction
 This guide will help us get our machine ready for the development and exploitation environment.
 The core Tools and Methodologies used for assesing web applications and performing researches should be applied.
 
@@ -29,6 +29,10 @@ Installing Kali:
 3. Using Windows 11 - WSL 2 we can use a Linux Kernel inside Hyper-V VM(make sure to allow for nested VM) Follow [Kali documentation and commands](https://www.kali.org/docs/wsl/wsl-preparations/#quick-method)
 
 Note: The easiest method is to install Kali in WSL2 is [Kali Linux via the Microsoft Store](https://www.kali.org/docs/wsl/wsl-preparations/#kali-in-microsoft-store)
+Enable WSL2:
+```powershell
+wsl --install
+```
 ```bash
 #commands to get WSL2 Kali up to speed:
 
