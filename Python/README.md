@@ -8,6 +8,7 @@ is exposed but was never declared, and it's even missing from the Api specificat
 To run the flask app you can use:
 ```Bash
 cd flask
+pip3 install -r requirements.txt
 python3 app.py
 ```
 
